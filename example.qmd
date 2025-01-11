@@ -1,0 +1,14 @@
+---
+title: "Quarto-font-ligatures Example"
+filters:
+  - quarto-font-ligatures
+---
+
+This filter adds a font-ligature mechanism.
+
+Currently supported characters are:
+
+- `=>` : =>
+
+- `->` : ->
+
