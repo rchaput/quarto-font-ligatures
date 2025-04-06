@@ -2,6 +2,22 @@
 local ligatures = {
   ["->"] = "→",
   ["=>"] = "⇒",
+  ["-->"] = "⟶",
+  ["==>"] = "⟹",
+  ["<-"] = "←",
+  ["<--"] = "⟵",
+  ["<="] = "⇐",
+  ["<=="] = "⟸",
+  ["<->"] = "↔",
+  ["<=>"] = "⇔",
+  ["<-->"] = "⟷",
+  ["<==>"] = "⟺",
+
+  -- Because of Quarto's own filters, the `--` might not be recognized.
+  -- They are internally replaced with `–` (which is not the same as `-`!).
+  ["–>"] = "⟶",
+  ["<–"] = "⟵",
+  ["<–>"] = "⟷",
 }
 
 
