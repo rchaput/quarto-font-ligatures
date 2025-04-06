@@ -1,6 +1,9 @@
 *.html
 *.pdf
 *_files/
+public/
 /.luarc.json
+
+/.quarto/
 
 .DS_Store
