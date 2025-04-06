@@ -31,3 +31,9 @@ Currently supported characters are:
 - `<-->` : <-->
 
 - `<==>` : <==>
+
+- `!=` : !=
+
+- `>=` : >=
+
+- `=<` : =<
