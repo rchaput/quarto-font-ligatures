@@ -1,0 +1,41 @@
+name: Docs
+
+on:
+  push:
+    branches: ["main"]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    permissions:
+      pages: write
+      id-token: write
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Install Quarto
+      uses: quarto-dev/quarto-actions/setup@v2
+
+    - name: Render README.md to HTML
+      # We build the README as `index.html` to have a landing page
+      run: quarto render ./README.md --to html --output-dir public --output index.html
+
+    - name: Render example.qmd to HTML
+      # We must tell Quarto not to delete everything in `public` since we are 
+      # rendering both files to the same directory!
+      run: quarto render ./example.qmd --to html --output-dir public --no-clean
+
+    - name: Upload static files as artifact
+      uses: actions/upload-pages-artifact@v3
+      with:
+        path: public/
+
+    - name: Deploy artifact to GH Pages
+      id: deployment
+      uses: actions/deploy-pages@v4

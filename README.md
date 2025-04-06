@@ -32,3 +32,4 @@ Then, simply write your document content, including ligatures, such as `=>`, `->
 
 Here is the source code for a minimal example: [example.qmd](example.qmd).
 
+The result can be seen [here](https://rchaput.github.io/quarto-font-ligatures/example.html).
